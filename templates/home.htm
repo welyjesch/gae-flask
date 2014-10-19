@@ -1,0 +1,54 @@
+{{cookies}}
+{% extends "_base.htm" %}
+
+{% block head %} {% include '_head.htm' with context %} {% endblock %}
+{% block title %} {{page}} {% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="main jumbotron">
+        <h3>About the Author</h3>
+        <div class="col-sm-3 col-sm-3">
+          <a href="#" class="thumbnail">
+            <img data-src="holder.js/50%x180" alt="Generic placeholder thumbnail" src="img/profilepic.jpg">
+          </a>
+        </div>
+        <p class="lead">
+        Wely is a software engineer in his mid-twenties. He has coded in PHP, JS (Node and FE Libraries, Jquery, Angular, Require),
+        ASP, Haskell, Python and Java. He had worked on projects that used different technology stacks and services,
+        LAMP, LEMP, MEAN, GAE, Heroku, OpenShift, AWS. 
+        He is fascinated about counter-intuitive yet brilliant innovations, thus
+        he sets aside some free time for projects that, he thinks, could change the world.
+
+        </p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+      </div>
+
+    </div>
+{% endblock %}
+
+{% block test %}
+  console.log('{{user}}, {{url}}, {{logout_utl}}, {{auth}}');
+{% endblock %}

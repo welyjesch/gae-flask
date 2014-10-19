@@ -1,0 +1,14 @@
+ <form class="post-entry-form" role="form" action="/entry/new" method="post">
+    <div class="memo-input">
+      <input name="title" type="text" class="form-control" placeholder="New Memo">
+    </div>
+    <div class="memo-input">
+      <textarea name="content" class="form-control" rows="4"></textarea>
+    </div>
+    <div class="memo-post-info">
+      Currently logged in as {{user}}.
+    </div>
+    <div class="memo-submit">
+      <input type="submit" class="btn btn-success" value="Post">
+    </div>
+  </form>

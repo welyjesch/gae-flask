@@ -1,0 +1,58 @@
+{% extends "_base.htm" %}
+
+{% block content %}
+<div class="panel panel-default panel-list">
+  <div class="panel-heading">
+    <h3 class="panel-title">Previous Entries</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a href='#'>Cras justo odio</a><span class="pull-right">8/25/14</span>
+      </li>
+    </ul>
+    <ul class="pagination">
+      <li class="#"><a href="#">PREV</a></li>
+      <li><a href="#">1</a></li>
+      <li class="active"><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li class="disabled"><a href="#">5</a></li>
+      <li class="#"><a href="#">NEXT</a></li>
+    </ul>
+  </div>
+</div>\
+<div class="panel panel-default panel-post">
+  <div class="panel-heading">
+    <h3 class="panel-title">Post New Entry</h3>
+  </div>
+  <div class="panel-body">
+    {% if pvars.error %}
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      {{pvars.error}}
+    </div>
+    {% endif%}
+    {% if pvars.message %}
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      {{pvars.message}}
+    </div>
+    {% endif %}
+     <form class="post-entry-form" role="form" action="/post" method="post">
+        <div class="post-title">
+          <input name="title" type="text" class="form-control">
+        </div>
+        <div class="post-content">
+          <textarea name="content" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="post-info">
+          Currently logged in as {{user}}.
+        </div>
+        <div class="post-submit">
+          <input id="postSubmit" type="submit" class="btn btn-success pull-right" value="Post">
+          <input id="deleteSubmit" type="submit" class="btn btn-danger" value="Delete">
+        </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

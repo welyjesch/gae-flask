@@ -1,0 +1,59 @@
+{% extends "_base.htm" %}
+{% block title %} {{page}} {% endblock %}
+{% block app_params %}'{{page}}', '{{user}}', '{{login}}', '{{logout}}' {% endblock %}
+
+{% block content %}
+  <div class="container">
+    {% if user != 'None' %}
+    <div class="main jumbotron">
+      <h4>Write new Memo</h4>
+      <form class="bs-example bs-example-form" role="form" action="/memos/post" method="post">
+        <div class="memo-input">
+          <input name="title" type="text" class="form-control" placeholder="New Memo">
+        </div>
+        <div class="memo-input">
+          <textarea name="content" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="memo-post-info">
+          Currently logged in as {{user}}.
+        </div>
+        <div class="memo-submit">
+          <input type="submit" class="btn btn-success" value="Post">
+        </div>
+      </form>
+    </div>
+    {% endif %}
+    {% for memo in memos %}
+      <div class="memo-tpl">
+        <div class="page-header">
+          <h4 class="memo-tpl-title">{{memo.title}}</h4>
+        </div>
+        <div class="memo-tpl-content">
+          <p>
+            {{memo.content}}
+          </p>
+        </div>
+        <div class="memo-tpl-footer">
+          <p>
+            written by {{memo.author}} at {{memo.date}}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+
+      
+    </div>
+{% endblock %}
+
+{% block templates %}
+  <div class="memo-template">
+    <div class="page-header">
+      <h3 class="memo-title">Sticky footer with fixed navbar</h3>
+    </div>
+    <p class="memo-content">
+      Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.
+    </p>
+    <p class="memo-footer">Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.
+    </p>
+  </div>
+{% endblock %}

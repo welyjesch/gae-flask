@@ -1,0 +1,32 @@
+{% extends "_base.htm" %}
+{% block title %} {{page}} {% endblock %}
+{% block app_params %}'{{page}}', '{{user}}', '{{login}}', '{{logout}}' {% endblock %}
+
+
+{% block content %}
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Shares.htm!</h1>
+      <p class="lead">You can use this for reference when extending in other pages.</p>
+    </div>
+
+    <h3>Three equal columns</h3>
+    <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+
+    <h3>Three unequal columns</h3>
+    <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.</p>
+
+    <div class="row">
+      <div class="col-md-3">.col-md-3</div>
+      <div class="col-md-6">.col-md-6</div>
+      <div class="col-md-3">.col-md-3</div>
+    </div>
+
+    </div>
+{% endblock %}
